@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Permission</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        input, button { padding: 0.5em; margin: 0.5em 0; }
+        .message { color: green; }
+    </style>
+</head>
+<body>
+<h2>Add Access Permission</h2>
+<form action="/permissions" method="post">
+    <label>User ID: <input type="text" name="userId" required></label><br/>
+    <label>Location: <input type="text" name="location" required></label><br/>
+    <label>Service Type: <input type="text" name="serviceType" required></label><br/>
+    <label>Start Time (YYYY-MM-DDTHH:MM): <input type="datetime-local" name="startTime" required></label><br/>
+    <label>End Time (YYYY-MM-DDTHH:MM): <input type="datetime-local" name="endTime" required></label><br/>
+    <button type="submit">Add</button>
+</form>
+<div class="message" th:text="${message}"></div>
+</body>
+</html>
